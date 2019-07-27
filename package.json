@@ -1,14 +1,15 @@
 {
   "name": "md2bg",
+  "description": "convert markdown syntax to backlog syntax",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "webpack"
-  },
-  "keywords": [],
-  "author": "",
+  "author": "37108",
   "license": "MIT",
+  "scripts": {
+    "type-check": "tsc -p . --noEmit",
+    "build": "webpack",
+    "lint": "eslint src/*.ts src/*/*.ts",
+    "fix": "eslint src/*.ts src/*/*.ts"
+  },
   "dependencies": {
     "@types/unist": "^2.0.3",
     "remark-breaks": "^1.0.3",
@@ -17,10 +18,23 @@
   },
   "devDependencies": {
     "@types/node": "^12.6.8",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "^1.18.2",
     "ts-loader": "^6.0.4",
     "ts-node": "^8.3.0",
     "typescript": "^3.5.3",
     "webpack": "^4.38.0",
     "webpack-cli": "^3.3.6"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "all"
   }
 }
