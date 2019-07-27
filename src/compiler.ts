@@ -34,6 +34,18 @@ const compiler = {
     const title = yields.children.map(item => traversal(item)).join('')
     return `[[${title}:${url}]]`
   },
+  table: (yields): string => {
+    const header = `${traversal(yields.children[0])}h\n`
+    const body = yields.children.slice(1).map(item => traversal(item)).join('\n')
+    return header + body
+  },
+  tableRow : (yields): string => {
+    const items = yields.children.map(item => traversal(item)).join(' | ')
+    return '| ' + items + ' |'
+  },
+  tableCell : (yields): string => {
+    return yields.children.map(item => traversal(item)).join('')
+  },
 }
 
 export { compiler }
