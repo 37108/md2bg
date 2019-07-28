@@ -17,8 +17,7 @@ const parser = (file: string): any => {
 
 const handler = (file: string) => {
   const ast = parser(file)
-  const res = ast.children.map(item => traversal(item)).join('\n')
-  console.log(res)
+  return ast.children.map(item => traversal(item)).join('\n')
 }
 
-handler('test/test.md')
+export { handler }

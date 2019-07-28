@@ -1,9 +1,23 @@
 {
   "name": "md2bg",
   "description": "convert markdown syntax to backlog syntax",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "37108",
   "license": "MIT",
+  "bin": {
+    "md2bg": "build/src/bin/index.js"
+  },
+  "files": [
+    "build/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/37108/md2bg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/37108/md2bg/issues"
+  },
+  "homepage": "https://github.com/37108/md2bg",
   "scripts": {
     "type-check": "tsc -p . --noEmit",
     "build": "tsc",
