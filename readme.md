@@ -1,7 +1,6 @@
 <div align="center">
   <strong>📝 Convert Markdown Syntax to Backlog Syntax</strong>
 </div>
-
 <br />
 
 ## Getting Started
@@ -10,13 +9,12 @@ Just Do It
 ```
 echo '## Hello World' > sample.md
 
-npx md2bg --file sample.md > sample.backlog
+npx md2bg sample.md > sample.backlog
 ```
 
 ## Supported Syntax
-this restriction comes from Backlog syntax.  
-See [here](https://github.com/syntax-tree/mdast) and check markdown AST.
-
+md2bg has some restriction because of Backlog syntax.  
+See [here](https://github.com/syntax-tree/mdast) and check markdown AST.  
 
 - [x] Parent
 - [x] Literal
@@ -35,8 +33,8 @@ See [here](https://github.com/syntax-tree/mdast) and check markdown AST.
 - [x] Table
 - [x] TableRow
 - [x] TableCell
-- [ ] List(Work In Progress)
-- [ ] ListItem(Work In Progress)
+- [x] List
+- [x] ListItem
 - [ ] ThematicBreak
 - [ ] HTML
 - [ ] YAML
