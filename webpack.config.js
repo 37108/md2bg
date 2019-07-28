@@ -1,9 +1,10 @@
+const webpack = require('webpack')
+
 module.exports = {
   mode: 'production',
   resolve: { extensions: ['.ts', '.js'] },
   target: 'node',
   entry: {
-    'build/handler': './src/index.ts',
     'build/bin': './src/bin/index.ts',
   },
   output: {
@@ -19,4 +20,5 @@ module.exports = {
       },
     ],
   },
+  plugins: [new webpack.BannerPlugin({ banner: '#!/usr/bin/env node', raw: true })],
 }
