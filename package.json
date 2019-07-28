@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "type-check": "tsc -p . --noEmit",
-    "build": "webpack",
+    "build": "tsc",
     "lint": "eslint src/*.ts",
     "fix": "eslint --fix src/*.ts"
   },
@@ -25,9 +25,7 @@
     "prettier": "^1.18.2",
     "ts-loader": "^6.0.4",
     "ts-node": "^8.3.0",
-    "typescript": "^3.5.3",
-    "webpack": "^4.38.0",
-    "webpack-cli": "^3.3.6"
+    "typescript": "^3.5.3"
   },
   "prettier": {
     "printWidth": 100,
