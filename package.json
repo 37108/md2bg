@@ -5,7 +5,7 @@
   "author": "37108",
   "license": "MIT",
   "bin": {
-    "md2bg": "build/src/bin/index.js"
+    "md2bg": "build/bin.js"
   },
   "files": [
     "build/"
@@ -20,7 +20,7 @@
   "homepage": "https://github.com/37108/md2bg",
   "scripts": {
     "type-check": "tsc -p . --noEmit",
-    "build": "tsc",
+    "build": "webpack",
     "lint": "eslint src/*.ts",
     "fix": "eslint --fix src/*.ts",
     "test": "jest"
@@ -28,7 +28,9 @@
   "dependencies": {
     "remark-breaks": "^1.0.3",
     "remark-parse": "^7.0.0",
-    "unified": "^8.3.2"
+    "unified": "^8.3.2",
+    "webpack": "^4.38.0",
+    "webpack-cli": "^3.3.6"
   },
   "devDependencies": {
     "@types/jest": "^24.0.15",
