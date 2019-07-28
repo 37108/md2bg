@@ -45,3 +45,20 @@ See [here](https://github.com/syntax-tree/mdast) and check markdown AST.
 - [ ] ImageReference
 - [ ] Footnote
 - [ ] FootnoteReferenc
+
+## Build
+```
+npm run build
+```
+
+## Test
+```
+npm run test
+```
+
+## Lint
+```
+npm run lint
+
+npm run fix
+```
