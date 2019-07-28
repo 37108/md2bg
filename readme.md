@@ -3,6 +3,8 @@
 </div>
 <br />
 
+[![npm version](https://badge.fury.io/js/md2bg.svg)](https://badge.fury.io/js/md2bg)
+
 ## Getting Started
 Just Do It
 
