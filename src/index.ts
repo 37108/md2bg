@@ -15,9 +15,9 @@ const parser = (file: string): any => {
   return processor.parse(content)
 }
 
-const handler = (file: string) => {
+const md2bg = (file: string) => {
   const ast = parser(file)
   return ast.children.map(item => traversal(item)).join('\n')
 }
 
-export { handler }
+export { md2bg }
