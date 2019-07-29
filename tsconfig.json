@@ -6,5 +6,9 @@
     "esModuleInterop": true,
     "rootDir": ".",
     "outDir": "./build/"
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "tests"
+  ]
 }
