@@ -23,7 +23,7 @@ jobs:
       - restore_node_modules
       - run: npm install
       - cache_node_modules
-      - run: npx run type-check
+      - run: npm run type-check
       - run: npm run test
   build:
     executor: default
