@@ -1,6 +1,7 @@
+#!/usr/bin/env node
 import * as fs from 'fs'
 import * as path from 'path'
-import { handler } from '../'
+import { md2bg } from '../'
 
 const main = () => {
   if (process.argv.length < 3) {
@@ -15,7 +16,7 @@ const main = () => {
     console.log(`no such a file: ${file}`)
     return
   }
-  const res = handler(file)
+  const res = md2bg(file)
   console.log(res)
 }
 
