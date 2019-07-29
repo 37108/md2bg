@@ -50,5 +50,5 @@ test('table', () => {
 })
 
 test('list', () => {
-  expect(compiler['table'](listNode)).toBe('+ [x] foo')
+  expect(compiler['list'](listNode, {})).toBe('+ [x] foo\n')
 })
