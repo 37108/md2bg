@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - run: npx run type-check
+      - run: npm run type-check
       - run: npm run test
   build:
     docker:
