@@ -1,0 +1,16 @@
+version: 1
+update_configs:
+  - package_manager: "javascript"
+    directory: "/"
+    update_schedule: "daily"
+    target_branch: "master"
+    default_reviewers:
+      - "37108"
+    default_assignees:
+      - "37108"
+    default_labels:
+      - "dependencies"
+    allowed_updates:
+      - match:
+          update_type: "all"
+    version_requirement_updates: "increase_versions"
