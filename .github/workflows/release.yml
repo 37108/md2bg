@@ -20,11 +20,6 @@ jobs:
           REPO: ${{github.repository}}
           COMMIT: ${{github.sha}}
         run: ./release.sh
----
-  release:
-    name: release to npm
-    runs-on: ubuntu-latest
-    steps:
       - name: checkout
         uses: actions/checkout@v1
       - name: setup Node
