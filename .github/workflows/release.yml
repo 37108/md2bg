@@ -12,29 +12,26 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v1
-      - name: install
-        run: npm install can-npm-publish
+      - name: setup Node
+        uses: actions/setup-node@v1
+        with:
+          version: 10.x
+          registry-url: 'https://registry.npmjs.org'
+      - name: install can-npm-publish and dependencies
+        run: |
+          npm install can-npm-publish
+          npm ci
       - name: check version and add tag
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           REPO: ${{github.repository}}
           COMMIT: ${{github.sha}}
         run: ./release.sh
-      - name: checkout
-        uses: actions/checkout@v1
-      - name: setup Node
-        uses: actions/setup-node@v1
-        with:
-          version: 10.x
-      - name: Clean install dependencies and build
-        run: npm ci
       - name: test
         run: npm run test
-      - name: build and release
+      - name: build
+        run: npm run build
+      - name: release
+        run: npm publish
         env:
-          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-        run: |
-          touch ~/.npmrc
-          echo "//registry.npmjs.org/:_authtoken=${NPM_TOKEN}" >> ~/.npmrc
-          npm run build
-          npm publish
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
