@@ -1,7 +1,7 @@
 {
   "name": "md2bg",
   "description": "convert markdown syntax to backlog syntax",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "author": "37108",
   "license": "MIT",
   "bin": {
@@ -28,14 +28,14 @@
   },
   "dependencies": {
     "remark-breaks": "^1.0.3",
-    "remark-parse": "^7.0.0",
+    "remark-parse": "^7.0.1",
     "unified": "^8.3.2"
   },
   "devDependencies": {
     "@types/jest": "^24.0.15",
     "@types/node": "^12.6.8",
-    "@typescript-eslint/eslint-plugin": "^1.13.0",
-    "@typescript-eslint/parser": "^1.13.0",
+    "@typescript-eslint/eslint-plugin": "^2.3.1",
+    "@typescript-eslint/parser": "^2.3.1",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
