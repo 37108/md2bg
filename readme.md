@@ -4,7 +4,6 @@
 <br />
 
 [![npm version](https://badge.fury.io/js/md2bg.svg)](https://badge.fury.io/js/md2bg)
-[![CircleCI](https://circleci.com/gh/37108/md2bg/tree/master.svg?style=svg)](https://circleci.com/gh/37108/md2bg/tree/master)
 
 ## Getting Started
 Just Do It
