@@ -1,0 +1,45 @@
+name: automatic release
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - "!*"
+jobs:
+  tagging:
+    name: check version and tagging
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: install
+        run: npm install can-npm-publish
+      - name: check version and add tag
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          REPO: ${{github.repository}}
+          COMMIT: ${{github.sha}}
+        run: ./release.sh
+---
+  release:
+    name: release to npm
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: setup Node
+        uses: actions/setup-node@v1
+        with:
+          version: 10.x
+      - name: Clean install dependencies and build
+        run: npm ci
+      - name: test
+        run: npm run test
+      - name: build and release
+        env:
+          NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: |
+          touch ~/.npmrc
+          echo "//registry.npmjs.org/:_authtoken=${NPM_TOKEN}" >> ~/.npmrc
+          npm run build
+          npm publish
