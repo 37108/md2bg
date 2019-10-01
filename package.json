@@ -1,7 +1,7 @@
 {
   "name": "md2bg",
   "description": "convert markdown syntax to backlog syntax",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "author": "37108",
   "license": "MIT",
   "bin": {
