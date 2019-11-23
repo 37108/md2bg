@@ -6,17 +6,31 @@ import breaks from 'remark-breaks'
 
 import { traversal } from './traversal'
 
-const parser = (file: string): any => {
+const readFile = (file: string): string => {
   const filePath = path.resolve(file)
-  const content = fs.readFileSync(filePath, 'utf-8')
+  return fs.readFileSync(filePath, 'utf-8')
+}
+
+const parser = (content: string): any => {
   const processor = unified()
     .use(markdown, {})
     .use(breaks)
   return processor.parse(content)
 }
 
-const md2bg = (file: string) => {
-  const ast = parser(file)
+/**
+ * Convert Markdown document to Backlog format
+ * @param {string} mdData file path or Markdown content
+ * @param {boolean} isFileName whether mdData is file name or not
+ */
+const md2bg = (mdData: string, isFileName: boolean) => {
+  let content: string
+  if (isFileName) {
+    content = readFile(mdData)
+  } else {
+    content = mdData
+  }
+  const ast = parser(content)
   return ast.children.map(item => traversal(item)).join('\n')
 }
 
