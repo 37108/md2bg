@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 import * as fs from 'fs'
 import * as path from 'path'
-import { md2bg } from '../'
 import { Command } from 'commander'
+
+import { md2bg } from '../'
 
 const program = new Command()
 
