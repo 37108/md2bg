@@ -1,7 +1,7 @@
 {
   "name": "md2bg",
   "description": "convert markdown syntax to backlog syntax",
-  "version": "0.5.6",
+  "version": "0.6.0",
   "author": "37108",
   "license": "MIT",
   "bin": {
@@ -27,6 +27,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "commander": "^4.0.1",
     "remark-breaks": "^1.0.3",
     "remark-parse": "^7.0.1",
     "unified": "^8.3.2"
